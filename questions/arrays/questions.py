@@ -37,7 +37,7 @@ def check_permutations(s_one, s_two):
         del h_table[char]
     return True
 
-def urlify(string):
+def urlify(string, length):
     """
     Question 3: Write a method to replace all spaces in a string with '%20'. You may
     assume that the string has suffcient space at the end to hold the additional characters,
@@ -45,7 +45,22 @@ def urlify(string):
 
     In python I can use the replace method. string.replace(' ', '%20')
     """
-    pass
+    if not length:
+        return None
+
+    chars = []
+    last_char = None
+    for index, char in enumerate(string):
+        if not index <= length:
+            continue
+        if last_char == '%20' and char == ' ':
+            continue
+        if char == ' ':
+            char = '%20' 
+        last_char = char
+        chars.append(char)
+    return ''.join(chars)
+
 
 def palindrome_permutation(string):
    """

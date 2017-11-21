@@ -49,15 +49,15 @@ class ArrayQuestionsTest(unittest.TestCase):
 
     def test_urlify_none(self):
         string = None
-        new_string = urlify(string)
+        new_string = urlify(string, 0)
         self.assertEqual(None, new_string)
 
     def test_urlify_no_spaces(self):
         string = 'albert'
-        new_string = urlify(string)
+        new_string = urlify(string, 6)
         self.assertEqual(string, new_string)
 
     def test_urlify_with_spaces(self):
         string = 'He was a great  man! '
-        new_string = urlify(string)
+        new_string = urlify(string, 20)
         self.assertEqual(new_string, 'He%20was%20a%20great%20man!%20')
