@@ -1,6 +1,6 @@
 import unittest
 
-from data_structures.linked_list import (LinkedList, 
+from data_structures.linked_list import (LinkedList,
                                          Node)
 
 
@@ -22,7 +22,7 @@ class NodeTest(unittest.TestCase):
 
 
 class LinkedListTest(unittest.TestCase):
-    
+
     def setUp(self):
         self.linked_list = LinkedList()
 
@@ -43,4 +43,3 @@ class LinkedListTest(unittest.TestCase):
         self.linked_list.insert('test')
         self.linked_list.delete('test')
         self.assertEquals(self.linked_list.size(), 0)
-

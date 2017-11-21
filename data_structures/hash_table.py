@@ -13,7 +13,7 @@ class HashTable(object):
     def __init__(self, size=0):
         self.size = size
         self.table = [[] for slot in range(0, self.size)]
-    
+
     def __repr__(self):
         return f'<HashTable size={self.size}>'
 

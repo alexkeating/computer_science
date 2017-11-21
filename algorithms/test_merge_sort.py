@@ -12,4 +12,3 @@ class MergeSort(TestCase):
         merged_list = merge_sort(numbers)
         sorted_list = sorted(numbers)
         self.assertEqual(merged_list, sorted_list)
-

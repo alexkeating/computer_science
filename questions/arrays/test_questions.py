@@ -4,6 +4,7 @@ from questions.arrays.questions import (check_permutations,
                                         string_is_unique,
                                         urlify)
 
+
 class ArrayQuestionsTest(unittest.TestCase):
 
     def test_string_is_unique_blank(self):

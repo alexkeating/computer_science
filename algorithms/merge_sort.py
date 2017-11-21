@@ -6,10 +6,10 @@ def merge(right, left, output=list()):
     """
     This function merges two sorted lists.
 
-    :param right: 
-    :param left: 
-    :param output: 
-    :return: 
+    :param right:
+    :param left:
+    :param output:
+    :return:
     """
     if not right and not left:
         return output
@@ -42,9 +42,9 @@ def merge_sort(array_of_numbers):
     """
     This should split the array into single numbers and then recombine
     the list into a single sorted list in a recursive way.
-    
-    :param array_of_numbers: 
-    :return: 
+
+    :param array_of_numbers:
+    :return:
     """
     length = len(array_of_numbers)
     split = int(length/2)

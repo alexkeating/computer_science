@@ -6,7 +6,7 @@ class StackNode(object):
 
     def next(self):
         return self.prev_node
-        
+
 
 class Stack(object):
 
@@ -17,7 +17,7 @@ class Stack(object):
         """
         Add an item to the top of the stack.
         """
-        self.head = StackNode(self.head, data)           
+        self.head = StackNode(self.head, data)
 
     def pop(self):
         """
@@ -44,5 +44,4 @@ class Stack(object):
         This function determines if there is a head
         node or not.
         """
-        return self.head == None
-
+        return self.head is None

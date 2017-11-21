@@ -26,19 +26,18 @@ class Queue(object):
         if not self.first:
             self.first = self.last
 
-    
     def remove(self):
-       """
-       Remove the first item in the queue.
-       """
-       if self.isEmpty():
-           raise ValueError("Queue is empty cannot remove item")
-       else:
-           item_data = self.first.data
-           self.first = self.first.prev_node
-           if not self.first:
-               self.last = None
-           return item_data
+        """
+        Remove the first item in the queue.
+        """
+        if self.isEmpty():
+            raise ValueError("Queue is empty cannot remove item")
+        else:
+            item_data = self.first.data
+            self.first = self.first.prev_node
+            if not self.first:
+                self.last = None
+            return item_data
 
     def peek(self):
         """
@@ -54,5 +53,4 @@ class Queue(object):
         Returns True if and only if the queue is
         empty.
         """
-        return self.first == None
-
+        return self.first is None

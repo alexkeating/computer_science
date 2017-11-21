@@ -1,7 +1,7 @@
 import unittest
 
-from data_structures.stack import (Stack, 
-                                   StackNode)
+from data_structures.stack import (Stack)
+
 
 class StackTest(unittest.TestCase):
 
@@ -10,13 +10,13 @@ class StackTest(unittest.TestCase):
         stack.push('test')
 
         self.assertEqual(stack.head.data, 'test')
-    
+
     def test_pop_is_none(self):
         stack = Stack()
 
         with self.assertRaises(ValueError):
             stack.pop()
-    
+
     def test_pop(self):
         stack = Stack()
         stack.push('win')
@@ -46,4 +46,3 @@ class StackTest(unittest.TestCase):
 
         self.assertEqual(stack_empty.isEmpty(), True)
         self.assertEquals(stack_full.isEmpty(), False)
-
