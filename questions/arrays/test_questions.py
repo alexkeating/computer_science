@@ -62,3 +62,10 @@ class ArrayQuestionsTest(unittest.TestCase):
         string = 'He was a great  man! '
         new_string = urlify(string, 20)
         self.assertEqual(new_string, 'He%20was%20a%20great%20man!%20')
+
+    def test_palidrome_permutation_odd(self):
+        string = 'Tact Coa'
+        permutations = palindrome_permutation(string)
+        self.assertEquals(permutations, ['taco cat', 'tcao act',
+                                         'acto tca',  'ctao cta',
+                                         'atco cta', 'cato tac']

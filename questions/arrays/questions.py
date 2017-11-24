@@ -69,4 +69,17 @@ def palindrome_permutation(string):
    a rearrangement of letters. The palindrome does not need to be limited to a dictionary of
    words.
    """
+    is_odd = (sum(1 for char in string if char != ' ') % 2) > 0
+    if is_odd:
+        for 
+    else:
+        pass
+
+
+def one_edit_away_verification(string1, string2):
+    """
+    Question 5: There are three types of edits that can be performed on strings: insert a
+    character, remove a character, or replace a character. Given two strings, write a function
+    to check if they are one edit (or zero edits) away.
+    """
     pass
