@@ -1,7 +1,9 @@
 import unittest
 
 from data_structures.linked_list import LinkedList
-from questions.linked_list.questions import remove_dups, return_kth_to_last
+from questions.linked_list.questions import (delete_middle_node,
+                                             remove_dups,
+                                             return_kth_to_last)
 
 
 def insert_values(linked_list, values_list):
@@ -66,3 +68,19 @@ class LinkedListQuestionsTest(unittest.TestCase):
     def test_return_kth_none(self):
         kth = return_kth_to_last(None)
         self.assertEqual(kth, None)
+
+    def test_delete_middle_node(self):
+        data_values = ['a', 'b', 'c', 'e']
+        new_linked_list = insert_values(self.linked_list, data_values)
+        node = new_linked_list.search('c')
+        delete_middle_node(node)
+        values = get_linked_list_values(new_linked_list)
+        self.assertEqual(['e', 'b', 'a'], values)
+
+    def test_delete_middle_node_empty(self):
+        data_values = ['a', 'b', 'c', 'e']
+        new_linked_list = insert_values(self.linked_list, data_values)
+        node = None
+        delete_middle_node(node)
+        values = get_linked_list_values(new_linked_list)
+        self.assertEqual(['e', 'c', 'b', 'a'], values)

@@ -43,10 +43,26 @@ def return_kth_to_last(linked_list):
             node = node.get_next_node()
 
 
-def delete_middle_node(linked_list, node):
+def delete_middle_node(node):
     """
     Implement an algorithm to delete a node in the middle (i.e., any
-    node but the and last node not necessarily the exact middle) of
+    node but the first and last node not necessarily the exact middle) of
     a singly linked list, given only access to that node.
+    """
+    if not node:
+        return None
+    next_node = node.get_next_node()
+    node.next_node = next_node.get_next_node()
+    node.data = next_node.data
+
+
+def partition(value):
+    """
+    Write code to parition a linked list around a value x, such that all
+    nodes less than x come before all nodes greater than or equal to x. If
+    x is contained within a list, the values of x only need to be after the
+    elements less than x. The partition element x can appear  anywhere in the
+    "right partition", it does not need to appear between the left and right
+    partitions.
     """
     pass
