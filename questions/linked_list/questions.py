@@ -1,3 +1,9 @@
+"""
+This module contains funstions for each question in the linked list
+section of cracking the coding interview.
+"""
+
+
 def remove_dups(linked_list):
     """
     Write code to remove duplicates from an unsorted linked list.
@@ -66,3 +72,32 @@ def partition(value):
     partitions.
     """
     pass
+
+
+def sum_lists(linked_list1, linked_list2):
+    """
+    You  have two numbers represented by a linked list, where each node contains
+    a single digit. The digits are stored in reverse order, such that the 1's digit
+    is at the head of the list. Write a function that adds the two numbers and
+    returns the sum as a linked list.
+    """
+    def create_number(linked_list):
+        end = False
+        number = 0
+        multiplication_rule = 1
+        node = linked_list.head
+        while end is False:
+            if not node:
+                end = True
+            else:
+                digit = node.data * multiplication_rule
+                number += digit
+                multiplication_rule *= 10
+                node = node.get_next_node()
+        return number
+
+    number1 = create_number(linked_list1)
+    number2 = create_number(linked_list2)
+
+    final_number = number1 + number2
+    return final_number

@@ -3,7 +3,8 @@ import unittest
 from data_structures.linked_list import LinkedList
 from questions.linked_list.questions import (delete_middle_node,
                                              remove_dups,
-                                             return_kth_to_last)
+                                             return_kth_to_last,
+                                             sum_lists)
 
 
 def insert_values(linked_list, values_list):
@@ -12,6 +13,13 @@ def insert_values(linked_list, values_list):
         linked_list.insert(value)
         new_linked_list = remove_dups(linked_list)
     return new_linked_list
+
+
+def insert_values_dups(linked_list, values_list):
+
+    for value in values_list:
+        linked_list.insert(value)
+    return linked_list
 
 
 def get_linked_list_values(linked_list):
@@ -84,3 +92,33 @@ class LinkedListQuestionsTest(unittest.TestCase):
         delete_middle_node(node)
         values = get_linked_list_values(new_linked_list)
         self.assertEqual(['e', 'c', 'b', 'a'], values)
+
+    def test_sum_lists(self):
+        data_values1 = [7, 0, 0]
+        data_values2 = [3, 0, 0]
+
+        new_linked_list1 = insert_values_dups(self.linked_list, data_values1)
+        new_linked_list2 = insert_values_dups(LinkedList(), data_values2)
+
+        summation = sum_lists(new_linked_list1, new_linked_list2)
+        self.assertEqual(1000, summation)
+
+    def test_sum_lists_all_non_zero(self):
+        data_values1 = [7, 2, 1]
+        data_values2 = [3, 3, 3]
+
+        new_linked_list1 = insert_values_dups(self.linked_list, data_values1)
+        new_linked_list2 = insert_values_dups(LinkedList(), data_values2)
+
+        summation = sum_lists(new_linked_list1, new_linked_list2)
+        self.assertEqual(1054, summation)
+
+    def test_sum_lists_all_zero(self):
+        data_values1 = [0, 0, 0]
+        data_values2 = [0, 0, 0]
+
+        new_linked_list1 = insert_values_dups(self.linked_list, data_values1)
+        new_linked_list2 = insert_values_dups(LinkedList(), data_values2)
+
+        summation = sum_lists(new_linked_list1, new_linked_list2)
+        self.assertEqual(0, summation)
