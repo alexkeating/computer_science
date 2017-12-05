@@ -80,6 +80,8 @@ def sum_lists(linked_list1, linked_list2):
     a single digit. The digits are stored in reverse order, such that the 1's digit
     is at the head of the list. Write a function that adds the two numbers and
     returns the sum as a linked list.
+
+    This should return a linked list not an integer.
     """
     def create_number(linked_list):
         end = False
@@ -101,3 +103,43 @@ def sum_lists(linked_list1, linked_list2):
 
     final_number = number1 + number2
     return final_number
+
+
+def palidrome(linked_list):
+    """
+    Implement  a function to check if a linked list is a palindrome.
+    """
+    pass
+
+
+def intersection(linked_list1, linked_list2):
+    """
+    Given two (singly) linked lists, determine if the two lists intersect. Return
+    the intersecting node. Note theat the intersection is defined based on reference
+    not value. That is, if the kth node of the first linked list is the same exact node
+    (by reference) as the jth node of the second linked list, then they are intersecting.
+    """
+    pass
+
+
+def  loop_detection(linked_list):
+    """
+    Given a circular linked list, imlement an algorithm that returns the node at the
+    beginning of the loop.
+
+    Circular linke list: A (corrupt) linked list in which the node's next pointer points
+    to an earlier node, so as to make a loop in the linked list.
+    """
+    if not linked_list:
+        return False
+
+    node = linked_list.head
+    node_dict = {}
+    while node:
+        if not node:
+            return False
+        elif node_dict.get(node, None):
+            return node
+        else:
+            node_dict[node] = True
+            node = node.get_next_node()

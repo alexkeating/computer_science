@@ -2,6 +2,7 @@ import unittest
 
 from data_structures.linked_list import LinkedList
 from questions.linked_list.questions import (delete_middle_node,
+                                             loop_detection,
                                              remove_dups,
                                              return_kth_to_last,
                                              sum_lists)
@@ -122,3 +123,32 @@ class LinkedListQuestionsTest(unittest.TestCase):
 
         summation = sum_lists(new_linked_list1, new_linked_list2)
         self.assertEqual(0, summation)
+
+    def test_sum_lists_all_different_sizes(self):
+        data_values1 = [0, 2, 1]
+        data_values2 = [0, 0, 3]
+
+        new_linked_list1 = insert_values_dups(self.linked_list, data_values1)
+        new_linked_list2 = insert_values_dups(LinkedList(), data_values2)
+
+        summation = sum_lists(new_linked_list1, new_linked_list2)
+        self.assertEqual(24, summation)
+
+    def test_loop_detection_example(self):
+        """
+        Tests loop detection using the book example.
+        """
+        data_values1 = [0, 1, 2, 3]
+
+        new_linked_list = insert_values_dups(self.linked_list, data_values1)
+        repeated_node = new_linked_list.search(2)
+        new_linked_list.search(0).set_next_node(repeated_node)
+        node = loop_detection(new_linked_list)
+        self.assertEqual(node, repeated_node)
+
+    def test_loop_detection_none(self):
+        """
+        Tests loop detection using the book example.
+        """
+        node = loop_detection(None)
+        self.assertEqual(node, False)
