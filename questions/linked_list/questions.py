@@ -122,7 +122,7 @@ def intersection(linked_list1, linked_list2):
     pass
 
 
-def  loop_detection(linked_list):
+def loop_detection(linked_list):
     """
     Given a circular linked list, imlement an algorithm that returns the node at the
     beginning of the loop.
